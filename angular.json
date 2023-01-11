@@ -27,12 +27,22 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
+              "src/theme.less",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ "node_modules/apexcharts/dist/apexcharts.min.js"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+          }
           },
           "configurations": {
             "production": {
@@ -100,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8e51fe20-eff8-4d93-b4c7-801907b918c5"
   }
 }
