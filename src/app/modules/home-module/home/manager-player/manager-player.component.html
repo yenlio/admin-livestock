@@ -1,9 +1,51 @@
-<p>manager-player works!</p>
-<div nz-row style="height: 20px;" [nzGutter]="30px">
-    <div nz-col nzSpan="6" style="background-color: aqua;">
-        <div class="grid-config">Column</div>
+<p>Quản lý người dùng</p>
+<div nz-row>
+    <div nz-col nzSpan="6">
+        <nz-input-group>
+            <input type="text" nz-input placeholder="input search text" />
+        </nz-input-group>
     </div>
-    <div nz-col nzSpan="6" style="background-color: blueviolet;">Code ở đây</div>
-    <div nz-col nzSpan="6" style="background-color: brown;">col-12</div>
-    <div nz-col nzSpan="6" style="background-color: bisque;">col-12</div>
-  </div>
+    <div nz-col nzSpan="12">col-12</div>
+    <div nz-col nzSpan="6">
+        <div class="page"></div>
+    </div>
+</div>
+
+<div class="table">
+    <nz-table #basicTable [nzData]="listOfData" [nzTotal]="4" [nzPageIndex]="1" [nzPageSize]="4" [nzShowSizeChanger]="true" [nzPageSizeOptions]="[2,4,6]">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã</th>
+            <th>Họ và tên</th>
+            <th>Xu</th>
+            <th>Lãi/Lỗ</th>
+            <th>Số xu đã mua CP</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.STT }}</td>
+            <td>{{ data.code }}</td>
+            <td>{{ data.fullName }}</td>
+            <td>{{ data.Xu }}</td>
+            <td>{{ data.payment }}</td>
+            <td>{{ data.xuCP }}</td>
+            <td>
+                <button nz-button nzType="primary"  (click)="showModal()"><span nz-icon nzType="download">Xem chi tiết</span></button>
+            </td>
+            <!-- <td>
+              <a>Action 一 {{ data.name }}</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a>Delete</a>
+            </td> -->
+          </tr>
+        </tbody>
+      </nz-table>
+
+
+</div>
+<app-detail-player [(isVisible)]="isVisible"></app-detail-player>
+
+

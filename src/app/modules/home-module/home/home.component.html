@@ -10,3 +10,17 @@
       [title]="chartOptions.title"
     ></apx-chart>
   </div>
+
+
+  <!--1: Using FormControl without FormBuilder on a single element -->
+  <!-- <input type="text" [formControl]="myControl" />
+  <p>{{myControl.value}}</p> -->
+
+  <input type="text" required [formControl]="myControl" />
+<p>Valid: {{ myControl.valid }}</p>
+<p>Touched: {{ myControl.touched }}</p>
+<p>Dirty: {{ myControl.dirty }}</p>
+<p>Value: {{ myControl.value }}</p>
+
+
+

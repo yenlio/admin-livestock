@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 
 import {
@@ -76,4 +77,6 @@ export class HomeComponent {
       }
     };
   }
+
+  myControl = new FormControl('Hoàng Yên');
 }
