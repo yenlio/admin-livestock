@@ -17,7 +17,6 @@ export class BookService {
     return this.http
       .get<{ items: Book[] }>(
         'https://www.googleapis.com/books/v1/volumes?maxResults=5&orderBy=relevance&q=oliver%20sacks'
-
       )
       .pipe(map((books) => books.items || []));
   }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,12 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffect } from './store/userStore/user.effect';
+import { UserReducer } from './store/userStore/user.reducer';
+// import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/app.reduce';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 // import { DemoNgZorroAntdModule } from './ant-design.module';
 // import { StoreModule } from '@ngrx/store';
 registerLocaleData(en);
@@ -45,7 +51,10 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NzButtonModule,
-    StoreModule.forRoot({books: booksReducer, collection: collectionReducer}, {})
+    StoreModule.forRoot({ appState: appReducer }),
+    EffectsModule.forRoot([UserEffect]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode(), autoPause: true, }),
+    // StoreModule.forFeature('demoUser', UserReducer),
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

@@ -23,12 +23,17 @@ const routes: Routes = [
         loadChildren: () =>
           import('./modules/demo-book/demo-book.module').then(m => m.DemoBookModule)
       },
+      {
+        path: 'user',
+        loadChildren: () =>
+          import('./modules/demo-crud/demo-crud.module').then(m => m.DemoCRUDModule)
+      },
 
     ]
   },
 
   // Fallback when no prior routes is matched
-  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
+  // { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

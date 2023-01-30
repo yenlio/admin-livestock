@@ -1,7 +1,5 @@
-export interface Project {
-    id: number;
-    link: string;
-    title: string;
-    thumbnail: string;
-    description: string;
+export interface User {
+    id: string;
+    name: string;
+    age: number;
   }

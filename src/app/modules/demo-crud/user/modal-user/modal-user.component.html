@@ -1,0 +1,18 @@
+<p>modal-user works!</p>
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Thông tin chi tiết"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  nzWidth="1000px"
+>
+  <ng-container *nzModalContent style="background-color: bisque">
+    <input nz-input placeholder="Tên"  [(ngModel)]="user.name" />
+    <br/>
+    <br/>
+    <br/>
+    <input nz-input placeholder="Age"  [(ngModel)]="user.age"/>
+
+
+  </ng-container>
+</nz-modal>

@@ -13,4 +13,4 @@ export const selectBookCollection = createSelector(
   (books, collection) => {
     return collection.map((id) => books.find((book) => book.id === id));
   }
-);
+); 

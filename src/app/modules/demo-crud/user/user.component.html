@@ -1,0 +1,43 @@
+<p>user works!</p>
+<div nz-row>
+    <div nz-col nzSpan="8">
+        <input nz-input placeholder="Tìm kiếm" />
+    </div>
+    <div nz-col nzSpan="8">
+        <button nz-button nzType="primary">Tìm kiếm</button>
+
+    </div>
+    <div nz-col nzSpan="8">
+        <button nz-button nzType="primary" (click)="showModal()">Thêm</button>
+
+    </div>
+</div>
+
+<div class="table" style="margin-top: 20px;">
+    <nz-table #basicTable  >
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody  >
+          <tr *ngFor="let user of listUser$ | async">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>
+                <button nz-button nzType="primary"(click)="editUser(user)">Sửa</button>
+            </td>
+            <td>
+                <button nz-button nzType="primary" (click)="deleteUser(user.id)">Xoá</button>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+</div>
+
+<app-modal-user [(isVisible)]="isVisible" [User]="user"></app-modal-user>
