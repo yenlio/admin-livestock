@@ -1,14 +1,106 @@
 {
-  "demo": [
+  "listLib": {
+   "k": {
+     "standardized-cra:4.0.0":{
+      "size":17716,
+      "name":"standardized-cra",
+       "version":"4.0.0"
+     },
+     "class-loading:4.0.1":{
+      "size":17716,
+      "name":"class-loading",
+       "version":"4.0.0"
+     },
+     "microchassis-mertric:4.0.21.6":{
+      "size":355071,
+      "name":"microchassis-mertric",
+       "version":"4.0.21.6"
+     },
+     "app-config:4.0.1":{
+      "size":52707,
+      "name":"app-config",
+       "version":"4.0.1"
+     },
+     "micro-exception:4.0.1":{
+      "size":52707,
+      "name":"micro-exception",
+       "version":"4.0.21.2"
+     },
+     "micro-exception-1:4.0.2":{
+      "size":52707,
+      "name":"app-config",
+       "version":"4.0.21.2"
+     },
+     "vocs-cache :4.0.2":{
+      "size":52707,
+      "name":"app-config",
+       "version":"4.0.21.2"
+     }
+
+   }
+  },
+  "Develop-application":[
     {
-      "id": 7,
-      "name": "hoang yen",
-      "age": "8"
+      "size":505984,
+      "name":"standardized-cra",
+      "version":"4.0.0"
     },
     {
-      "id": 8,
-      "name": "yen hoang",
-      "age": "12"
+      "size":505984,
+      "name":"json-translator",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"vocs-cache",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"standardized-cra",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"standardized-cra",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"class-loading",
+      "version":"4.0.0.0"
+    }
+  ],
+  "Testing-application":[
+    {
+      "size":505984,
+      "name":"microchassis-mertric",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"json-translator",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"vocs-cache",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"standardized-cra",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"micro-exception",
+      "version":"4.0.9.5"
+    },
+    {
+      "size":505984,
+      "name":"class-loading",
+      "version":"4.0.0.0"
     }
   ]
 }

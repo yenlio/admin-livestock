@@ -1,51 +1,57 @@
 <p>Quản lý người dùng</p>
 <div nz-row>
-    <div nz-col nzSpan="6">
-        <nz-input-group>
-            <input type="text" nz-input placeholder="input search text" />
-        </nz-input-group>
-    </div>
-    <div nz-col nzSpan="12">col-12</div>
-    <div nz-col nzSpan="6">
-        <div class="page"></div>
-    </div>
+  <div nz-col nzSpan="6">
+    <nz-input-group>
+      <input type="text" nz-input placeholder="input search text" />
+    </nz-input-group>
+  </div>
+  <div nz-col nzSpan="12">col-12</div>
+  <div nz-col nzSpan="6">
+    <div class="page"></div>
+  </div>
 </div>
 
-<div class="table">
-    <nz-table #basicTable [nzData]="listOfData" [nzTotal]="4" [nzPageIndex]="1" [nzPageSize]="4" [nzShowSizeChanger]="true" [nzPageSizeOptions]="[2,4,6]">
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Mã</th>
-            <th>Họ và tên</th>
-            <th>Xu</th>
-            <th>Lãi/Lỗ</th>
-            <th>Số xu đã mua CP</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of basicTable.data">
-            <td>{{ data.STT }}</td>
-            <td>{{ data.code }}</td>
-            <td>{{ data.fullName }}</td>
-            <td>{{ data.Xu }}</td>
-            <td>{{ data.payment }}</td>
-            <td>{{ data.xuCP }}</td>
-            <td>
-                <button nz-button nzType="primary"  (click)="showModal()"><span nz-icon nzType="download">Xem chi tiết</span></button>
-            </td>
-            <!-- <td>
+<div class="table" >
+  <nz-table #basicTable [nzData]="listOfData" [nzTotal]="4" [nzPageIndex]="1" [nzPageSize]="4"
+    [nzShowSizeChanger]="true" [nzPageSizeOptions]="[2, 4, 6]" style="width:1500px;overflow-x:scroll;">
+    <thead>
+      <tr>
+        <th *ngIf="showstt">stt</th>
+        <th *ngIf="showMa">Mã</th>
+        <th *ngIf="showName">full name</th>
+        <th *ngIf="showXu">xu</th>
+        <th *ngIf="showLai">payment</th>
+        <th *ngIf="showCp">cp</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td *ngIf="showstt">{{ data.STT }}</td>
+        <td *ngIf="showMa">{{ data.code }}</td>
+        <td *ngIf="showName">{{ data.fullName }}</td>
+        <td *ngIf="showXu">{{ data.Xu }}</td>
+        <td *ngIf="showLai">{{ data.payment }}</td>
+        <td *ngIf="showCp">{{ data.xuCP }}</td>
+        <td>
+          <button nz-button nzType="primary" (click)="showModal()">
+            <span nz-icon nzType="download">Xem chi tiết</span>
+          </button>
+        </td>
+        <!-- <td>
               <a>Action 一 {{ data.name }}</a>
               <nz-divider nzType="vertical"></nz-divider>
               <a>Delete</a>
             </td> -->
-          </tr>
-        </tbody>
-      </nz-table>
+      </tr>
+    </tbody>
+  </nz-table>
 
+  <input type="checkbox" [checked]="!showstt" (change)="showstt=!showstt" />
+
+  <input type="checkbox" [checked]="!showMa" (change)="showMa=!showMa" />
+
+  <input type="checkbox" [checked]="!showName " (change)="showName =!showName " />
 
 </div>
 <app-detail-player [(isVisible)]="isVisible"></app-detail-player>
-
-

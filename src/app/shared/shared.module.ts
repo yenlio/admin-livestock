@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CommonComponent } from './common/common.component';
-
-
+import { ButtonComponent } from './common/button/button.component';
+// import { ButtonLargeComponent } from './common/button/button-large/button-large.component';
+// import { CommonComponent } from './common/common.component';
 
 @NgModule({
   declarations: [
-    CommonComponent
+    // CommonComponent
+    ButtonComponent,
+
   ],
   imports: [
     CommonModule

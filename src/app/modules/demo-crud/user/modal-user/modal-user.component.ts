@@ -35,24 +35,23 @@ export class ModalUserComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-
   }
 
   ngOnChanges():void{
+    // let fetchData$ = this.route.paramMap.pipe(
+    //   switchMap(() => {
+    //     var id = this.User.id
+    //     return this.store.pipe(select(selectUserById(id)));
+    //   })
+    // );
+    // fetchData$.subscribe((data) => {
+    //   if (data) {
+    //     console.log(data,"dataaa");
+    //     this.user = { ...data };
+    //   }})
+    // console.log(this.User,"ủe");
 
-
-    let fetchData$ = this.route.paramMap.pipe(
-      switchMap(() => {
-        var id = this.User.id
-        return this.store.pipe(select(selectUserById(id)));
-      })
-    );
-    fetchData$.subscribe((data) => {
-      if (data) {
-        console.log(data,"dataaa");
-
-        this.user = { ...data };
-      }})
+    this.user=this.User
   }
 
    handleCancel(){

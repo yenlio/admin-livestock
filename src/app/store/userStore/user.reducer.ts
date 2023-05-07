@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { User } from "../../data/types/entity/user";
 import {adduserSuccess, deleteuserSuccess, getuserRequest,getuserSuccess, updateUserSucess } from "./user.actions";
-export const initialState: ReadonlyArray<User> = [];
+export const initialState: Array<User> = [];
 
 export const UserReducer = createReducer(
     initialState,

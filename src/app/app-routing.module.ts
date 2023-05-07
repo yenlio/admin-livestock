@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +26,11 @@ const routes: Routes = [
         path: 'user',
         loadChildren: () =>
           import('./modules/demo-crud/demo-crud.module').then(m => m.DemoCRUDModule)
+      },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./modules/auth-module/auth-module.module').then(m => m.AuthModuleModule)
       },
 
     ]

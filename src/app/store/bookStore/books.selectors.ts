@@ -1,7 +1,7 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { Book } from '../../data/types/entity/book';
 
-export const selectBooks = createFeatureSelector<ReadonlyArray<Book>>('books');
+export const selectBooks = createFeatureSelector<Book[]>('books');
 
 export const selectCollectionState = createFeatureSelector<
   ReadonlyArray<string>
@@ -13,4 +13,4 @@ export const selectBookCollection = createSelector(
   (books, collection) => {
     return collection.map((id) => books.find((book) => book.id === id));
   }
-); 
+);

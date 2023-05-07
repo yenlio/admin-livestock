@@ -14,16 +14,13 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserReducer } from 'src/app/store/userStore/user.reducer';
 import { UserEffect } from 'src/app/store/userStore/user.effect';
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 const routes: Routes = [
   {
     path: '',
     component: UserComponent
   },
-
-
 ];
-
-
 @NgModule({
   declarations: [
     UserComponent,
@@ -31,6 +28,7 @@ const routes: Routes = [
   ],
   imports: [
     FormsModule,
+    Ng2SearchPipeModule,
     NzModalModule,
     NzGridModule,
     NzButtonModule,

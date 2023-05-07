@@ -1,43 +1,46 @@
 <p>user works!</p>
 <div nz-row>
-    <div nz-col nzSpan="8">
-        <input nz-input placeholder="Tìm kiếm" />
+  <div nz-col nzSpan="8">
+    <input nz-input #SearchInput placeholder="Tìm kiếm" id="search"  type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country" />
+  </div>
+  <div class="card" [hidden]="!showSearches">
+    <div class="search">
+      <div *ngFor="let car of searchedCars; trackBy: trackById" tappable (click)="setCarName(car)"
+        class="search-result">
+        {{car}}
+      </div>
     </div>
-    <div nz-col nzSpan="8">
-        <button nz-button nzType="primary">Tìm kiếm</button>
+    <p class="search" *ngIf="searchedCars && searchedCars.length <= 0 && !isSearching">No Car found</p>
+    <p class="search" [hidden]="!isSearching">Searching cars...</p>
+  </div>
+  <div nz-col nzSpan="8">
+    <button nz-button nzType="primary">Tìm kiếm</button>
 
-    </div>
-    <div nz-col nzSpan="8">
-        <button nz-button nzType="primary" (click)="showModal()">Thêm</button>
+  </div>
+  <div nz-col nzSpan="8">
+    <button nz-button nzType="primary" (click)="showModal()">Thêm</button>
 
-    </div>
+  </div>
 </div>
 
 <div class="table" style="margin-top: 20px;">
-    <nz-table #basicTable  >
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody  >
-          <tr *ngFor="let user of listUser$ | async">
-            <td>{{user.id}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.age}}</td>
-            <td>
-                <button nz-button nzType="primary"(click)="editUser(user)">Sửa</button>
-            </td>
-            <td>
-                <button nz-button nzType="primary" (click)="deleteUser(user.id)">Xoá</button>
-            </td>
-          </tr>
-        </tbody>
-      </nz-table>
+  <nz-table #basicTable>
+    <thead>
+      <tr>
+        <th>Lib</th>
+        <th>Dev-app</th>
+        <th>Test-app</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listLibs">
+        <td>{{item.name}}</td>
+
+        <td  *ngFor="let app of item.apps"  [ngClass]="{'class1': app?.version==item.version,'class2': app?.version !==item.version}">{{app?.version}}</td>
+      </tr>
+
+    </tbody>
+  </nz-table>
 </div>
 
 <app-modal-user [(isVisible)]="isVisible" [User]="user"></app-modal-user>
