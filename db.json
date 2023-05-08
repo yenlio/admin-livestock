@@ -102,5 +102,54 @@
       "name":"class-loading",
       "version":"4.0.0.0"
     }
+  ],
+  "apiGroupPipeline":[
+    {
+      "group_id":"1",
+      "group_name":"name1",
+      "application":[
+        {
+         "application_id":"1.1",
+         "application_name":"app_1",
+         "branch":"branch_1",
+         "description":"mo ta du lieu",
+         "environment":[
+          {
+            "environment_type":"DEVELOPMENT",
+            "lastest_version":"1.2.1",
+            "environment_total":1,
+            "environment_outdate_total":0,
+            "score":9
+          },
+          {
+            "environment_type":"TEST",
+            "lastest_version":"1.2.1",
+            "environment_total":1,
+            "environment_outdate_total":0,
+            "score":9
+          },
+          {
+            "environment_type":"PRE_RELEASE",
+            "lastest_version":"1.2.2",
+            "environment_total":1,
+            "environment_outdate_total":0,
+            "score":9
+          },
+          {
+            "environment_type":"PRODUCTION",
+            "lastest_version":"1.2.3",
+            "environment_total":1,
+            "environment_outdate_total":0,
+            "score":9
+          }
+         ],
+         "epics":[
+          "epic_1", "epic_2","epic_3"
+         ]
+
+        }
+
+      ] 
+    }
   ]
 }
